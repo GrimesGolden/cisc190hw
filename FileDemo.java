@@ -24,5 +24,3 @@ public class FileDemo
        outputFile.close();
  }
 }
-         
-      
