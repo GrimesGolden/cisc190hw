@@ -22,7 +22,7 @@ public class StoreInfo
          System.out.println("Enter employee number " + i + ": Last name ");
          String lastName = kb.nextLine();
          employeeInfo.println(lastName);
-         
+        
          System.out.println("Enter employee number " + i + ": Employee ID ");
          String employeeId = kb.nextLine();
          employeeInfo.println(employeeId);
@@ -30,9 +30,11 @@ public class StoreInfo
          System.out.println("Enter employee number " + i + ": Years of Experience ");
          String yearsExp = kb.nextLine();
          employeeInfo.println(yearsExp);
+         employeeInfo.println(""); // Adding new line after each entry.
       }
       
       employeeInfo.close();
+      System.out.println("Data written to the program.");
       
       
       
