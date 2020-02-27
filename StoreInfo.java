@@ -6,8 +6,8 @@ public class StoreInfo
    public static void main(String[] args) throws IOException
    {  
       Scanner kb = new Scanner(System.in); // Creating scanner object.
-      File file = new File("Employee.txt");  // Creates employee file.
-      PrintWriter employeeInfo = new PrintWriter(new FileWriter(file, true)); //Creates write file.
+      FileWriter fw = new FileWriter("Employee.txt", true);  // Creates employee file writer.
+      PrintWriter employeeInfo = new PrintWriter(fw); //Creates write file.
       System.out.println("How many employees would you like to enter?: " );
       
       int employeeNumb =  kb.nextInt(); // Collecting number of employees to enter.
