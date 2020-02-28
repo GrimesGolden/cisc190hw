@@ -14,13 +14,13 @@ public class RetrieveInfo
       System.out.println("Retrieving data - Please enter the employees " +
       "first name:"); // Retrieving employees first name 
       String firstName = kb.nextLine(); // Employees first name saved to string.
-      while(employeeFile.hasNext())
+      while(employeeFile.hasNext()) // Continue as long as there are file entries.
       {
-         
          String employeeLine = employeeFile.nextLine(); // Read the next line.
-         if (employeeLine.equals(firstName)) // This reads every line. needs to just find first name. 
+         
+         if (employeeLine.equals(firstName)) // If entry matches first name
          {
-          System.out.println("Employee found. Processing data.");
+          System.out.println("Employee found. Processing data."); // Print all data
           System.out.println("First Name: " + firstName);
           System.out.println("Last Name: " + employeeFile.nextLine());
           System.out.println("Employee Id: " + employeeFile.nextLine());
@@ -30,7 +30,7 @@ public class RetrieveInfo
          } 
       }
       
-      employeeFile.close();
+      employeeFile.close(); // Close file.
       
       if(flag == 0)// Checks to see if employee was found. print tailored message.
       {
@@ -39,6 +39,10 @@ public class RetrieveInfo
       
       System.out.println("Reached end of file: Exiting");
       
+   // Program is basically done but still has one problem.
+   // It currently finds all entrys including last name, employee Id etc.
+   // It needs to just find ONLY last name. For example if i type in 3 it will find year of exp with 3.
+   
       
    }
 }
