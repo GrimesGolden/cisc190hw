@@ -3,17 +3,17 @@ import java.io.*; // Needed for file handling.
 
 public class StoreInfo
 {
-   public static void main(String[] args) throws IOException
+   public static void main(String[] args) throws IOException // Includes throw exception. 
    {  
       Scanner kb = new Scanner(System.in); // Creating scanner object.
       FileWriter fw = new FileWriter("Employee.txt", true);  // Creates employee file writer.
-      PrintWriter employeeInfo = new PrintWriter(fw); //Creates write file.
+      PrintWriter employeeInfo = new PrintWriter(fw); //Creates writeable file.
       System.out.println("How many employees would you like to enter?: " );
       
       int employeeNumb =  kb.nextInt(); // Collecting number of employees to enter.
       kb.nextLine(); //Consume new line
       
-      for (int i = 1; i <= employeeNumb; i++) // Collect data according to number of employees. 
+      for (int i = 1; i <= employeeNumb; i++) // Collect data for amount of employees entred. 
       {
          System.out.println("Enter employees number " + i + ": First name ");
          String firstName = kb.nextLine();

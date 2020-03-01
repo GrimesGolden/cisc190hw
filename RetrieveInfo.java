@@ -7,18 +7,18 @@ public class RetrieveInfo
    public static void main(String[] args) throws IOException
    {  
       Scanner kb = new Scanner(System.in); // Creating scanner class to read keyboard input
-      File file = new File("Employee.txt"); // Creating employee.txt file class.
-      Scanner employeeFile = new Scanner(file); // Creating scanner to read from employee.txt 
+      File file = new File("Employee.txt"); // Creating employee.txt file.
+      Scanner employeeFile = new Scanner(file); // Creating scanner to read from employee.txt file. 
       int flag = 0; // Will check if employee was found. 
       
       System.out.println("Retrieving data - Please enter the employees " +
       "first name:"); // Retrieving employees first name 
-      String firstName = kb.nextLine(); // Employees first name saved to string.
-      while(employeeFile.hasNext()) // Continue as long as there are file entries.
+      String firstName = kb.nextLine(); // Employees first name saved to variable.
+      while (employeeFile.hasNext()) // Continue as long as there are file entries.
       {
          String employeeLine = employeeFile.nextLine(); // Read the next line.
          
-         if (employeeLine.equals(firstName)) // If entry matches first name
+         if (employeeLine.equals(firstName)) // If entry matches first name then...
          {
           System.out.println("Employee found. Processing data."); // Print all data
           System.out.println("First Name: " + firstName);
@@ -32,12 +32,12 @@ public class RetrieveInfo
       
       employeeFile.close(); // Close file.
       
-      if(flag == 0)// Checks to see if employee was found. print tailored message.
+      if(flag == 0)// If employee was not found flag will still be at zero.
       {
-         System.out.println("Employee not found");
+         System.out.println("Employee not found"); // Therefore print message. 
       }
       
-      System.out.println("Reached end of file: Exiting");
+      System.out.println("Reached end of file: Exiting"); // While loop broke due to end of file. 
       
    // Program is basically done but still has one problem.
    // It currently finds all entrys including last name, employee Id etc.
