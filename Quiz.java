@@ -3,27 +3,27 @@ import java.util.Scanner;
 public class Quiz
 {
    public static void main(String[] args)
-   // Recieves an integer from user. If <= 0 and < 100 assigns true.
+   // Main method recieves an integer from user. If >= 0 and < 100 assigns true.
    // Otherwise assigns false.
    
    {
-      int number; // Number to determine.
-      boolean logic; // True or false logic
+      int number; // Declaring integer variable.
+      boolean logic; // Declaring boolean variable
       Scanner kb = new Scanner(System.in); // Scanner to accept input. 
       
       System.out.println("Please enter an integer: "); // Querying user for input. 
-      number = kb.nextInt(); // Accepting input and storing in number variable.
+      number = kb.nextInt(); // Storing input in number variable.
       
-      if (number >= 0 && number < 100)
+      if (number >= 0 && number < 100) // Performing logic steps. 
       {
-         logic = true;
+         logic = true; 
       }
       else
       {
          logic = false;
       }
       
-      System.out.println("integer: " + number);
-      System.out.println("true or false: " + logic);
+      System.out.println("integer: " + number); // Print integer on one line.
+      System.out.println("true or false: " + logic); // Print boolean on one line.
    }
 }
