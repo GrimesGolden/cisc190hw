@@ -11,19 +11,28 @@ public class Quiz
       boolean logic; // Declaring boolean variable
       Scanner kb = new Scanner(System.in); // Scanner to accept input. 
       
-      System.out.println("Please enter an integer: "); // Querying user for input. 
-      number = kb.nextInt(); // Storing input in number variable.
-      
-      if (number >= 0 && number < 100) // Performing logic steps. 
+      try // This try catch block will catch non-integer input. 
       {
-         logic = true; 
-      }
-      else
-      {
-         logic = false;
+         System.out.println("Please enter an integer: "); // Querying user for input. 
+         number = kb.nextInt(); // Storing input in number variable 
+     
+         if (number >= 0 && number < 100) // Performing logic steps. 
+         {
+            logic = true; 
+         }
+         else
+         {
+            logic = false;
+         }
+      
+         System.out.println("integer: " + number); // Print integer on one line.
+         System.out.println("true or false: " + logic); // Print boolean on one line.
       }
       
-      System.out.println("integer: " + number); // Print integer on one line.
-      System.out.println("true or false: " + logic); // Print boolean on one line.
+      catch (java.util.InputMismatchException e) // Will execute if user enters non-integer.
+      {
+         System.out.println("Error: Please enter only whole integers");
+      }
+      
    }
 }
