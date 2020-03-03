@@ -42,6 +42,8 @@ public class RetrieveInfo
    // Program is basically done but still has one problem.
    // It currently finds all entrys including last name, employee Id etc.
    // It needs to just find ONLY last name. For example if i type in 3 it will find year of exp with 3.
+   // Delete the spaces in text file.
+   // To fix error dont just parse through for matching lines, declare them as variables and make sure variables match first!*
    
       
    }
