@@ -30,7 +30,6 @@ public class StoreInfo
          System.out.println("Enter employee number " + i + ": Years of Experience ");
          String yearsExp = kb.nextLine();
          employeeInfo.println(yearsExp);
-         employeeInfo.println(""); // Adding new line after each entry.
       }
       
       employeeInfo.close();

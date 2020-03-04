@@ -13,19 +13,22 @@ public class RetrieveInfo
       
       System.out.println("Retrieving data - Please enter the employees " +
       "first name:"); // Retrieving employees first name 
-      String firstName = kb.nextLine(); // Employees first name saved to variable.
+      String nameSearch = kb.nextLine(); // Employees first name saved to variable nameSearch.
       while (employeeFile.hasNext()) // Continue as long as there are file entries.
       {
-         String employeeLine = employeeFile.nextLine(); // Read the next line.
+         String firstName = employeeFile.nextLine(); // Save first name to variable.
+         String lastName = employeeFile.nextLine(); // Save last name to variable.
+         String employeeId = employeeFile.nextLine(); // Save employee ID to variable.
+         String yearsExp = employeeFile.nextLine(); // Save years experience to variable.
          
-         if (employeeLine.equals(firstName)) // If entry matches first name then...
+         if (firstName.equals(nameSearch)) // If searched name matches first name then...
          {
           System.out.println("Employee found. Processing data."); // Print all data
-          System.out.println("First Name: " + firstName);
-          System.out.println("Last Name: " + employeeFile.nextLine());
-          System.out.println("Employee Id: " + employeeFile.nextLine());
-          System.out.println("Years of Exp: " + employeeFile.nextLine());
-          flag = 1;
+          System.out.println("First Name: " + nameSearch);
+          System.out.println("Last Name: " + lastName);
+          System.out.println("Employee Id: " + employeeId);
+          System.out.println("Years of Exp: " + yearsExp);
+          flag = 1; // Increment flag counter. 
           break;
          } 
       }
@@ -34,17 +37,10 @@ public class RetrieveInfo
       
       if(flag == 0)// If employee was not found flag will still be at zero.
       {
-         System.out.println("Employee not found"); // Therefore print message. 
+         System.out.println("No Employee was Found"); // Therefore print message. 
       }
       
-      System.out.println("Reached end of file: Exiting"); // While loop broke due to end of file. 
-      
-   // Program is basically done but still has one problem.
-   // It currently finds all entrys including last name, employee Id etc.
-   // It needs to just find ONLY last name. For example if i type in 3 it will find year of exp with 3.
-   // Delete the spaces in text file.
-   // To fix error dont just parse through for matching lines, declare them as variables and make sure variables match first!*
-   
+      System.out.println("Reached end of file: Exiting"); // While loop broke due to end of file.   
       
    }
 }
