@@ -365,7 +365,7 @@ double discriminant(double a, double b, double c)
 //     send to fout: "i"  -- I love driving EE's crazy :)
 // end function
 //------------------------------------------------------------------------------
-void output_complex_number(ofstream& fout, double& real, double& imaginary)
+void output_complex_number(ofstream& fout, double real, double imaginary)
 {
 	if (real != 0) {
 		fout << real;
@@ -375,10 +375,10 @@ void output_complex_number(ofstream& fout, double& real, double& imaginary)
 		fout << imaginary;
 	}
 	else if (imaginary < 0) {
-		fout << " - " << imaginary;
+		fout << " - " << -imaginary;
 	}
 	else if (imaginary > 0) {
-		fout << "+" << imaginary;
+		fout << " + " << imaginary;
 	}
 
 	fout << "i";
@@ -400,12 +400,12 @@ void output_complex_number(ofstream& fout, double& real, double& imaginary)
 //     end this line of output
 // end function
 //------------------------------------------------------------------------------
-void output_complex_roots(ofstream& fout, double&  real, double imag)
+void output_complex_roots(ofstream& fout, double real, double imag)
 {
 	fout << " has two complex roots: root1 = ";
 	output_complex_number(fout, real, imag);
 	fout << " and root2 = ";
-	output_complex_number(fout, real, imag);
+	output_complex_number(fout, real, -imag); 
 }
 
 //------------------------------------------------------------------------------
@@ -477,6 +477,9 @@ void output_complex_roots(ofstream& fout, double&  real, double imag)
 // end function
 //------------------------------------------------------------------------------
 void output_quad_eqn(ofstream& fout, double a, double b, double c) { // Gods help us...
+
+	fout << "The equation p(x) = ";
+
 	if (a == 1) {
 		fout << "x^2";
 	}
@@ -492,7 +495,7 @@ void output_quad_eqn(ofstream& fout, double a, double b, double c) { // Gods hel
 		fout << " - ";
 	}
 	else if (b < 0) {
-		fout << " - " << b;
+		fout << " - " << -b;
 	}
 	else if (b > 0) {
 		fout << " + " << b;
@@ -501,7 +504,7 @@ void output_quad_eqn(ofstream& fout, double a, double b, double c) { // Gods hel
 	fout << "x"; //Confused about line 460 comment, will make sense in context I imagine.**
 
 	if (c < 0) {
-		fout << " - " << c;
+		fout << " - " << -c; // Pretty sure the psuedo code is wrong right here, its not negative c, it's just c, we already know its negative "professor".
 	}
 	else if (c > 0) {
 		fout << " + " << c;
