@@ -22,6 +22,10 @@ public class ArrayTest
          System.out.println(i);
       }
       
+      System.out.println(""); // Print whitespace for improved aesthetic. 
+      
+      System.out.println("Size of array list is currently: " + al.size()); // Print size of al.
+      
       int removed = al.remove(0); // Remove int at index 0. Save to variable 'removed'.   
       
       
