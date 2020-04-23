@@ -11,7 +11,6 @@ public class Point
 		Point point1 = new Point(3, 3);
 		System.out.println(point1.getX());
 		System.out.println(point1.getY());
-
 	}
 
 	public Point()

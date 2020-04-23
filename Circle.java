@@ -8,7 +8,7 @@ public class Circle
 
 	public static void main(String[] args)
 	{
- 		System.out.println("test");
+ 		System.out.println(Math.PI * 1);
 	}
 	public Circle()
 	// Default constructor.
@@ -40,6 +40,11 @@ public class Circle
 		return centerCopy;
 	}
 
+	public double getRadius()
+	{
+		return this.radius; 
+	}
+
 	public String toString()
 	{
 		String message = "Circle: \n" + "With center: " + this.center +
@@ -51,7 +56,7 @@ public class Circle
 
 	public double getPerimeter()
 	{
-		double perimeter = 2 * Math.PI * radius;
+		double perimeter = (Math.PI * 2) * this.radius;
 		return perimeter;
 	}
 
@@ -60,7 +65,5 @@ public class Circle
 		double area = Math.PI * (radius * radius);
 		return area;
 	}
-
-
 
 }
