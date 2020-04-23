@@ -1,7 +1,10 @@
 public class Point   
-{
+{	
+	// Write two private instance variables...
+	// An x coord of type int and a y coord of type int.
 	private int x;
 	private int y;
+	
 
 	public static void main(String[] args)
 	{
@@ -9,11 +12,11 @@ public class Point
 		System.out.println(point1.getX());
 		System.out.println(point1.getY());
 
-		System.out.println(point1.equals());
 	}
 
 	public Point()
 	// No param constructor.
+	// Default constructor sets instance variables to zero.
 	{
 		x = 0;
 		y = 0;
@@ -21,13 +24,14 @@ public class Point
 
 	public Point(int val1, int val2)
 	// Two param constructor.
+	// Sets x and y coordinates.
 	{
 		x = val1;
 		y = val2;
 	}
 
 	public Point(Point p)
-	// Copy  constructor.
+	// Copy constructor.
 	{
 		this.x = p.x;
 		this.y = p.y;
@@ -56,14 +60,15 @@ public class Point
 	}
 
 	public String toString()
+	// toString method prints string as required.
 	{
-		String message = "Point: |X at " + this.x + "|  |Y at " + this.y + "|";
+		String message = "(" + this.x + "," + this.y + ")";
 		return message; 
 	}
-	public boolean equals()
-	// Verify instance variable equality. 
+	public boolean equals(Point p)
+	// Verify if two points are equal.  
 	{
-		if (this.x == this.y)
+		if (this.x == p.x && this.y == p.y)
 		{
 			return true;
 		}
