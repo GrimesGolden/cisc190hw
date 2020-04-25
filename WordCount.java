@@ -1,28 +1,19 @@
-import javax.swing.JOptionPane;
-
 public class WordCount
 {
 	public static void main(String[] args)
 	{
-		String input; // Holds input
-
-		String sentence; // Holds character
-
-		input = JOptionPane.showInputDialog("Enter" + 
-			" a sentence to obtain word count.");
-
-		sentence = input;
+		String sentence = "There are seven words in this sentence!";
 
 		System.out.println(WordCount.wordCount(sentence));
-
 	}
 
 	public static int wordCount(String sentence)
 	{
-		String[] tokens = sentence.split(" ");
-		int count = 0;
-		for (String s : tokens)
-			count += 1;
-		return count;
+		String[] tokens = sentence.split(" "); 
+		
+		return tokens.length;
+
 	}
 }
+
+
